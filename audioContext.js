@@ -23,14 +23,14 @@ export const AudioProvider = ({children}) => {
         await newSound.playAsync();
     }
     
-/*     //Audio dos botoes
+     //Audio dos botoes
     const playSomBot = async () => {
         if (mutado) return;
         const { sound: som } = await Audio.Sound.createAsync(
-          require('./assets/music/button.mp3')
+          require('./assets/music/botao.mp3')
         )
         //Volume
-        await som.setVolumeAsync(0.2);
+        await som.setVolumeAsync(1);
         await som.playAsync();
     
         som.setOnPlaybackStatusUpdate((status) => {
@@ -38,7 +38,7 @@ export const AudioProvider = ({children}) => {
             som.unloadAsync();
           }
         })
-      } */
+      } 
 
 /*       const mutar = async() => {
         if(!sound) return
@@ -72,7 +72,7 @@ export const AudioProvider = ({children}) => {
     }, [sound])
 
     return(
-        <AudioContext.Provider value={{playSound/* , playSomBot, mutado, mutar */}}>
+        <AudioContext.Provider value={{playSound, playSomBot,/* mutado, mutar */}}>
             {children}
         </AudioContext.Provider>
     )

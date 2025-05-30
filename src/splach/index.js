@@ -12,7 +12,7 @@ export default function splach (){
         playSound();
         setTimeout(()=>{
             navigation.navigate('Inicio')
-    },5000)
+    },500)
 
 },)
 
