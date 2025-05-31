@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import Carousel from 'react-native-reanimated-carousel';
 import { View, Image, Dimensions, ImageBackground, Pressable } from 'react-native';
 
-export default function inicio (){
+export default function Inicio (){
     const navigation = useNavigation();
     const { playSound, playSomBot } = useAudio();
 

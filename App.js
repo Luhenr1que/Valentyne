@@ -3,12 +3,12 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StatusBar } from 'expo-status-bar';
 import { AudioProvider } from './audioContext.js';
 
-import inicio from './src/inicio';
-import memories from './src/memories';
-import draws from './src/draws';
-import music from './src/music';
-import splach from './src/splach';
-import final from './src/final';
+import Inicio from './src/inicio/index.js';
+import Memories from './src/memories/index.js';
+import Draws from './src/draws/index.js';
+import Music from './src/music/index.js';
+import Splach from './src/splach/index.js';
+import Final from './src/final/index.js';
 
 const Stack = createNativeStackNavigator();
 
@@ -23,42 +23,42 @@ export default function App() {
       <Stack.Navigator>
         <Stack.Screen 
           name="Splach" 
-          component={splach} 
+          component={Splach} 
           options={{
             headerShown: false,
           }}
           />
         <Stack.Screen 
           name="Inicio" 
-          component={inicio} 
+          component={Inicio} 
           options={{
             headerShown: false,
           }}
           />
         <Stack.Screen 
           name="Memories" 
-          component={memories} 
+          component={Memories} 
           options={{
             headerShown: false,
           }}
           />
         <Stack.Screen 
           name="Draws" 
-          component={draws} 
+          component={Draws} 
           options={{
             headerShown: false,
           }}
           />
         <Stack.Screen 
           name="Music" 
-          component={music} 
+          component={Music} 
           options={{
             headerShown: false,
           }}
           />
         <Stack.Screen 
           name="Final" 
-          component={final} 
+          component={Final} 
           options={{
             headerShown: false,
           }}
@@ -67,5 +67,6 @@ export default function App() {
 
   </NavigationContainer>
   </AudioProvider>
-)}
+);
+}
 
