@@ -1,20 +1,64 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+import Draws from './src/pages/draws';
+import Final from './src/pages/final';
+import Inicio from './src/pages/inicio';
+import Memories from './src/pages/memories';
+import Music from './src/pages/musicPage';
+import Splach from './src/pages/splach';
+import { NavigationContainer } from '@react-navigation/native';
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name='Splach'
+          component={Splach}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name='Inicio'
+          component={Inicio}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name='Music'
+          component={Music}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name='Memories'
+          component={Memories}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name='Draws'
+          component={Draws}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name='Final'
+          component={Final}
+          options={{
+            headerShown: false,
+          }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
