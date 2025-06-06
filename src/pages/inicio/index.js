@@ -2,12 +2,18 @@ import { useNavigation } from "@react-navigation/native";
 import { Image, ImageBackground, Pressable, View, Dimensions } from "react-native";
 import { useState } from "react";
 import SwiperFlatList from "react-native-swiper-flatlist";
+import { useAudio } from "../../../audioContext";
+import { useEffect } from "react";
+
 
 const { width, height } = Dimensions.get('window');
 
-export default function Splash() {
+export default function Inicio() {
   const navigation = useNavigation();
-  const [bloq, setBloq] = useState(3);
+  const [bloq, setBloq] = useState(4);
+
+      const {playSomBot} = useAudio()
+
 
   const data = [
     {
@@ -28,11 +34,12 @@ export default function Splash() {
     {
       id: 4,
       img: bloq > 3 ? require('../../../assets/img/inicio/usB.png') : require('../../../assets/img/inicio/bloquedB.png'),
-      local: bloq > 3 ? 'Final' : ''
+      local: bloq > 3 ? 'Final' : null
     }
   ];
 
   const go = (local) => {
+    playSomBot()
     if (!local) return;
     setTimeout(() => {
       navigation.navigate(local);

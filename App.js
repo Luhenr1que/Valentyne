@@ -1,5 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { AudioProvider } from './audioContext.js';
 
 import Draws from './src/pages/draws';
 import Final from './src/pages/final';
@@ -13,6 +14,7 @@ const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
+    <AudioProvider>
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
@@ -59,6 +61,7 @@ export default function App() {
         />
       </Stack.Navigator>
     </NavigationContainer>
+    </AudioProvider>
   );
 }
 

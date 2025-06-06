@@ -4,8 +4,6 @@ import { Image, ImageBackground, Pressable,ActivityIndicator } from "react-nativ
 import { VideoView} from "expo-video";
 import { useEffect } from "react";
 
-
-
 export default function Splach(){
 
     const navigation = useNavigation();
