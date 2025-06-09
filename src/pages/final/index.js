@@ -1,6 +1,6 @@
 import { useNavigation } from "@react-navigation/native";
 import styles from "./style";
-import { ImageBackground, Pressable, Text } from "react-native";
+import { ImageBackground, Pressable, Text, Image } from "react-native";
 import { useAudio } from "../../../audioContext";
 import { useEffect } from "react";
 
@@ -10,7 +10,7 @@ export default function Final(){
     
     return(
         <ImageBackground style={styles.container} resizeMode='cover' source={require('../../../assets/img/final/back.png')}>
-            <Pressable onPress={()=>navigation.navigate('Inicio')}><Text>AAAAAAAAAAAAAAAAAAA</Text></Pressable>
+            <Pressable style={styles.setaA} onPress={()=>navigation.navigate('Inicio')}><Image style={styles.seta} source={require('../../../assets/img/seta.png')}/></Pressable>
         </ImageBackground>
     )
     

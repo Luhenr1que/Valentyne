@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native";
 
 export default StyleSheet.create({
-        container:{
+    container:{
         width:'100%',
         height:'100%',
         borderWidth:5,
@@ -9,4 +9,16 @@ export default StyleSheet.create({
         alignItems:'center',
         justifyContent:'center',
     },
+    setaA:{
+        width:80,
+        height:80,
+        bottom:'50%',
+        right:'38%',
+    },
+    seta:{
+        width:80,
+        height:80,
+        top:'50%',
+    },
+
 })

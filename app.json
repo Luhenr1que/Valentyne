@@ -4,27 +4,27 @@
     "slug": "Suprise",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/img/icon.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
     "splash": {
-      "image": "./assets/splash-icon.png",
+      "image": "./assets/img/icon.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#e7b76b"
     },
     "ios": {
       "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "foregroundImage": "./assets/img/icon.png",
+        "backgroundColor": "#e7b76b"
       },
       "edgeToEdgeEnabled": true,
       "package": "com.luhenriq.Suprise"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/img/icon.png"
     },
     "extra": {
       "eas": {
@@ -33,7 +33,8 @@
     },
     "plugins": [
       "expo-audio",
-      "expo-video"
+      "expo-video",
+      "expo-font"
     ]
   }
 }

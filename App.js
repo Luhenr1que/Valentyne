@@ -1,6 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
+import { useState, useEffect }  from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { AudioProvider } from './audioContext.js';
+import * as Font from 'expo-font';
 
 import Draws from './src/pages/draws';
 import Final from './src/pages/final';
@@ -13,6 +15,19 @@ import { NavigationContainer } from '@react-navigation/native';
 const Stack = createNativeStackNavigator();
 
 export default function App() {
+
+  const [font,setFont] = useState(false)
+
+    useEffect(() => {
+    async function loadFonts() {
+      await Font.loadAsync({
+        'nunito': require('./assets/fonts/Nunito-SemiBold.ttf'),
+      })
+      setFont(true)
+    }
+    loadFonts()
+  }, [])
+
   return (
     <AudioProvider>
     <NavigationContainer>

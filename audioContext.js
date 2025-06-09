@@ -18,7 +18,7 @@ export const AudioProvider = ({ children }) => {
         { shouldPlay: true, isLooping: true }
       );
 
-      await newSound.setVolumeAsync(0.5);  // Aumentando o volume para teste
+      await newSound.setVolumeAsync(0.2);  // Aumentando o volume para teste
       setSound(newSound);
       await newSound.playAsync();
     } catch (e) {
@@ -33,7 +33,27 @@ export const AudioProvider = ({ children }) => {
         require('./assets/music/botao.mp3')
       );
 
-      await som.setVolumeAsync(0.5);  // Aumentando o volume para teste
+      await som.setVolumeAsync(0.7);  // Aumentando o volume para teste
+      await som.playAsync();
+
+      som.setOnPlaybackStatusUpdate((status) => {
+        if (status.didJustFinish) {
+          som.unloadAsync();
+        }
+      });
+    } catch (e) {
+      console.error('Erro no som do botão:', e);
+    }
+  };
+
+  // Som dos botões
+  const playSomBotCode = async () => {
+    try {
+      const { sound: som } = await Audio.Sound.createAsync(
+        require('./assets/music/botCode.mp3')
+      );
+
+      await som.setVolumeAsync(0.7);  // Aumentando o volume para teste
       await som.playAsync();
 
       som.setOnPlaybackStatusUpdate((status) => {
@@ -66,7 +86,7 @@ export const AudioProvider = ({ children }) => {
   }, []);
 
   return (
-    <AudioContext.Provider value={{ playSound, playSomBot }}>
+    <AudioContext.Provider value={{ playSound, playSomBot,playSomBotCode }}>
       {children}
     </AudioContext.Provider>
   );
