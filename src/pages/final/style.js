@@ -20,4 +20,16 @@ export default StyleSheet.create({
         height:80,
         top:'50%',
     },
+    containerScroll:{
+        width:'95%',
+        height:'60%',
+        borderColor:'#572205',
+        borderWidth:2,
+    },
+    text:{
+        fontSize:30,
+        margin:20,
+        color: '#fff1dc',
+        fontFamily:'nunito',
+    },
 })

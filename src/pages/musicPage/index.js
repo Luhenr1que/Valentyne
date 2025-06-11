@@ -64,7 +64,7 @@ export default function Music(){
         const codeRewiew = () =>{
             playSomBotCode()
             setTimeout(()=>{
-                setCode(7)
+                setCode(2)
             },700);
         }
         const modal = (num) =>{
@@ -87,21 +87,21 @@ export default function Music(){
 
         const musicPlay =[{
             song: require('../../../assets/music/solo_01.mp3'),
-            msg:'Esse céu é grande demais pra se voar sozinho, por isso eu quero voar ao seu lado.',
+            msg:'Esse céu é grande demais para se voar sozinho, por isso eu quero voar ao seu lado.',
             volume:1,
         },{
             song: require('../../../assets/music/touch.mp3'),
-            msg:'Todas as vezes que a gente se toca, eu sinto algo incrivel, algo de outro mundo.',
+            msg:'Todas as vezes que a gente se toca, eu sinto algo incrível, algo de outro mundo.',
             volume:0.5,
         }
         ,{
             song: require('../../../assets/music/guns.mp3'),
-            msg:'Essa musica me faz imaginar o nosso futuro, e me lembra de como saber que eu vou ver você me alegra muito.',
+            msg:'Essa música me faz imaginar o nosso futuro e me lembra de como saber que eu vou ver você me alegra muito.',
             volume:1,
         }
         ,{
             song: require('../../../assets/music/lana.mp3'),
-            msg:'Viver ao seu lado, com os seus jeitos, tudo isso me fascina, tudo isso me encanta.',
+            msg:'Viver ao seu lado, com seus jeitos, tudo isso me fascina, tudo isso me encanta.',
             volume:1,
         }
         ,{
@@ -111,7 +111,7 @@ export default function Music(){
         }
         ,{
             song: require('../../../assets/music/times.mp3'),
-            msg:'Essas musicas assim tocam na minha cabeça quando eu te vejo, você é tão linda que eu acho que é um sonho.',
+            msg:'Essas musícas assim tocam na minha cabeça quando eu te vejo, você é tão linda que eu acho que é um sonho.',
             volume:1,
         }
         ,{
@@ -121,22 +121,22 @@ export default function Music(){
         }
         ,{
             song: require('../../../assets/music/colapso.mp3'),
-            msg:'e sinnto em paz junto de você, ter  você é o motivo de eu querer tanto viver.',
+            msg:'Eu sinto em paz junto de você, ter você é o motivo de eu querer tanto viver.',
             volume:1,
         }
         ,{
             song: require('../../../assets/music/hortela.mp3'),
-            msg:'saborear você é algo que eu sempre amei, o gosto da sua boca, o gosto do seu corpo.',
+            msg:'Saborear você é algo que eu sempre amei, o gosto da sua boca, o gosto do seu corpo.',
             volume:1,
         }
         ,{
             song: require('../../../assets/music/auras.mp3'),
-            msg:'A nossa aura é tão linda, tão unica.E nunca se esqueça, a sua voz sempre será a minha musica favorita!!!',
+            msg:'A nossa aura é tão linda, tão única. E nunca se esqueça, a sua voz sempre será a minha música favorita!',
             volume:1,
         },
         {
             song: require('../../../assets/music/drunk.mp3'),
-            msg:'E nunca se esqueça, a sua voz sempre será a minha musica favorita!!!',
+            msg:'E nunca se esqueça, a sua voz sempre será a minha música favorita!',
             volume:1,
         },
 ]
