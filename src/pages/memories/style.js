@@ -77,7 +77,7 @@ export default StyleSheet.create({
         flexShrink: 1,
         fontSize: 21,
         color: '#fff1dc',
-        maxWidth: '50%', 
+        maxWidth: '54%', 
         fontFamily:'nunito',
         textShadowColor: '#005501',
         textShadowOffset: { width: 1, height: 1 },

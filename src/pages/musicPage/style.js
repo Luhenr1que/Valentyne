@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native";
 
 export default StyleSheet.create({
-        container:{
+    container:{
         width:'100%',
         height:'100%',
         borderWidth:5,
@@ -26,14 +26,15 @@ export default StyleSheet.create({
         backgroundColor:'rgba(87, 34, 5, 0.5)',
     },
     linha:{
+        marginTop:3,
         display:'flex',
         flexDirection:'row',
-        backgroundColor:'#323232',
+        backgroundColor:'#393838',
         width:'100%',
-        height: 90,
+        height: 80,
         alignItems:'center',
         borderWidth:1,
-        borderColor:'#cecece',
+        borderColor:'#000',
         borderRadius:10,
         marginBottom:5,
     },
@@ -41,7 +42,7 @@ export default StyleSheet.create({
         width:80,
         height:80,
         borderRadius:20,
-        borderColor:'',
+        borderColor:'#202020',
         borderWidth:5,
     },
     textContainer: {
@@ -80,8 +81,12 @@ export default StyleSheet.create({
         tintColor:'#e7b76b',
     },
     mgsText:{
+        textAlign:'center',
         fontFamily:'nunito',
-        fontSize:25,
+        fontSize:30,
         color: '#fff1dc',
+        textShadowColor: '#5815b8',
+        textShadowOffset: { width: 1, height: 1 },
+        textShadowRadius: 1,
     },
 })

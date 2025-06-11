@@ -20,7 +20,7 @@ export default function Memories(){
         playSomBotCode()
         setTimeout(()=>{
             setCode(3)
-        },1000);
+        },700);
     }
     return(
         <ImageBackground style={styles.container} resizeMode='cover' source={require('../../../assets/img/memories/back.png')}>
