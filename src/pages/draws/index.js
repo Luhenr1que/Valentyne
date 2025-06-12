@@ -73,7 +73,7 @@ export default function Draws(){
                             textShadowOffset: { width: 1, height: 1 },
                             textShadowRadius: 1,
                             }}>
-                            Quando você olhou pra esse desenho, eu senti uma alegria tão grande, é algo tão pequeno, mas foi com muito amor.
+                            Quando você olhou para este desenho, eu senti uma alegria tão grande. É algo tão pequeno, mas feito com muito amor.
                             </Text>
                         </ImageBackground>
                         </Pressable>
@@ -100,7 +100,7 @@ export default function Draws(){
                             textShadowOffset: { width: 1, height: 1 },
                             textShadowRadius: 1,
                             }}>
-                            Esse desenho é um dos muitos que eu olho e lembro o quão talentosa vc é.
+                            Este desenho é um dos muitos que eu olho e me lembro de quão talentosa você é.
                             </Text>
                         </ImageBackground>
                         </Pressable>
@@ -127,7 +127,7 @@ export default function Draws(){
                             textShadowOffset: { width: 1, height: 1 },
                             textShadowRadius: 1,
                             }}>
-                            Por muitos dias ruins esse pequeno me dava esperança, porque eu sabia que eu tinha você.
+                           Por muitos dias ruins, esse pequeno desenho me dava esperança, porque eu sabia que tinha você.
                             </Text>
                         </ImageBackground>
                         </Pressable>
@@ -154,7 +154,7 @@ export default function Draws(){
                             textShadowOffset: { width: 1, height: 1 },
                             textShadowRadius: 1,
                             }}>
-                            Esse aqui me faz lembrar das noites em que os nossos corpos se tornam um, do calor, do fervor, de senseção.
+                            Este aqui me faz lembrar das noites em que nossos corpos se tornam um, do calor, do fervor, da sensação.
                             </Text>
                         </ImageBackground>
                         </Pressable>
@@ -181,7 +181,7 @@ export default function Draws(){
                             textShadowOffset: { width: 1, height: 1 },
                             textShadowRadius: 1,
                             }}>
-                            Eu me lembro do nosso primeiro beijo por causa desse desenho, é tão bom lembrar do nosso ínicio, mas o futuro vai ser bem melhor.
+                            Eu me lembro do nosso primeiro beijo por causa deste desenho. É tão bom lembrar do nosso início, mas o futuro será ainda melhor.
                             </Text>
                         </ImageBackground>
                         </Pressable>
@@ -208,7 +208,7 @@ export default function Draws(){
                             textShadowOffset: { width: 1, height: 1 },
                             textShadowRadius: 1,
                             }}>
-                            Esse é um dos mais especiais, eu nunca me imaginei tendo alguem ao meu lado, mas você sempre me mostra que eu tô errado.
+                            Este é um dos mais especiais. Eu nunca me imaginei tendo alguém ao meu lado, mas você sempre me mostra que eu estava errado.
                             </Text>
                         </ImageBackground>
                         </Pressable>
@@ -235,7 +235,7 @@ export default function Draws(){
                             textShadowOffset: { width: 1, height: 1 },
                             textShadowRadius: 1,
                             }}>
-                            Esse não foi feito por a gente, mas é tão fofo porque foi aqui que realmente caiu a minha ficha.
+                            Este não foi feito por nós, mas é tão fofo porque foi aqui que realmente caiu a minha ficha.
                             </Text>
                         </ImageBackground>
                         </Pressable>
@@ -262,7 +262,7 @@ export default function Draws(){
                             textShadowOffset: { width: 1, height: 1 },
                             textShadowRadius: 1,
                             }}>
-                            Eu tenho que falar algo? Esse desenho é o meu maior tesouro, meu tudo, minha eterna lembrença de quem é a minha dona.
+                           Preciso dizer algo? Este desenho é o meu maior tesouro, meu tudo, minha eterna lembrança de quem é a minha dona.
                             </Text>
                         </ImageBackground>
                         </Pressable>

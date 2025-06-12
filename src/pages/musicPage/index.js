@@ -131,12 +131,12 @@ export default function Music(){
         }
         ,{
             song: require('../../../assets/music/auras.mp3'),
-            msg:'A nossa aura é tão linda, tão única. E nunca se esqueça, a sua voz sempre será a minha música favorita!',
+            msg:'A nossa aura é tão linda, tão única. Nós combinamos, mesmo sendo diferentes, e isso torna tudo melhor.',
             volume:1,
         },
         {
             song: require('../../../assets/music/drunk.mp3'),
-            msg:'E nunca se esqueça, a sua voz sempre será a minha música favorita!',
+            msg:'Nunca se esqueça, a sua voz sempre será a minha música favorita!',
             volume:1,
         },
 ]
@@ -202,7 +202,7 @@ export default function Music(){
                     <Pressable onPress={() => { modal(9); playSomBotValue(musicPlay[9]); }} style={styles.linha}>
                         <Image style={styles.icon} source={require('../../../assets/img/musicFotos/auras.png')}></Image>
                         <View style={styles.textContainer}>
-                            <Text style={styles.text}>Colapso - Dri</Text>
+                            <Text style={styles.text}>Auras - Shiny</Text>
                         </View>
                     </Pressable>
                     <Pressable onPress={() => { modal(10); playSomBotValue(musicPlay[10]); }} style={styles.linha}>

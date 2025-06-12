@@ -10,6 +10,8 @@ import Inicio from './src/pages/inicio';
 import Memories from './src/pages/memories';
 import Music from './src/pages/musicPage';
 import Splach from './src/pages/splach';
+import Game from './src/pages/game/index.js';
+
 import { NavigationContainer } from '@react-navigation/native';
 
 const Stack = createNativeStackNavigator();
@@ -70,6 +72,13 @@ export default function App() {
         <Stack.Screen
           name='Final'
           component={Final}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name='Game'
+          component={Game}
           options={{
             headerShown: false,
           }}

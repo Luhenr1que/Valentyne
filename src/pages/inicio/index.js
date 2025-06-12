@@ -4,6 +4,7 @@ import { useRef,useState, useEffect, useContext } from "react";
 import SwiperFlatList from "react-native-swiper-flatlist";
 import { useAudio } from "../../../audioContext";
 import styles from "./style";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const { width, height } = Dimensions.get('window');
 
@@ -18,28 +19,40 @@ export default function Inicio() {
       const {playSomBot} = useAudio()
 
 
-  const data = [
+  const basedata = [
     {
       id: 1,
       img: require('../../../assets/img/inicio/musicB.png'),
-      local: 'Music'
+      local: 'Music',
+      color:'#e7b76b',
     },
     {
       id: 2,
       img: require('../../../assets/img/inicio/drawB.png'),
-      local: 'Draws'
+      local: 'Draws',
+      color:'#e7b76b',
     },
     {
       id: 3,
       img: require('../../../assets/img/inicio/rolesB.png'),
-      local: 'Memories'
+      local: 'Memories',
+      color:'#e7b76b',
     },
     {
       id: 4,
-      img: bloq=='703' ? require('../../../assets/img/inicio/usB.png') : require('../../../assets/img/inicio/bloquedB.png'),
-      local: bloq=='703' ? 'Final' : 'Modal'
-    }
+      img: bloq=='268' ? require('../../../assets/img/inicio/usB.png') : require('../../../assets/img/inicio/bloquedB.png'),
+      local: bloq=='268' ? 'Final' : 'Modal',
+      color: bloq=='268' ?'#fa4141':'#e7b76b',
+    },
   ];
+  const data = bloq ==='268' ? [
+    ...basedata,   {
+      id: 5,
+      img: require('../../../assets/img/inicio/gameB.png'),
+      local: 'Game',
+      color:'#77c0fa',
+    },
+  ] : basedata
 
     const go = (item) => {
       playSomBot()
@@ -57,14 +70,62 @@ export default function Inicio() {
       };
     }
     const goToIndex = (index) => {
-      playSomBot()
+      playSomBot();
       if (swiperRef.current) {
         swiperRef.current.scrollToIndex({ index, animated: true });
+        setCurrentIndex(index);
+        AsyncStorage.setItem('swiperIndex', index.toString());
       }
     };
-    const check = () =>{
-      setM(false)
-    }
+
+    const check = async () => {
+      try {
+        await AsyncStorage.setItem('bloq', bloq);
+        setM(false);
+      } catch (error) {
+        console.error('Erro ao salvar no AsyncStorage', error);
+      }
+    };
+
+    useEffect(() => {
+      const loadBloq = async () => {
+        try {
+          const savedBloq = await AsyncStorage.getItem('bloq');
+          if (savedBloq !== null) {
+            setBloq(savedBloq);
+          }
+        } catch (error) {
+          console.error('Erro ao carregar do AsyncStorage', error);
+        }
+      };
+        const loadData = async () => {
+          try {
+            const savedBloq = await AsyncStorage.getItem('bloq');
+            if (savedBloq !== null) {
+              setBloq(savedBloq);
+            }
+
+            const savedIndex = await AsyncStorage.getItem('swiperIndex');
+            if (savedIndex !== null) {
+              const index = parseInt(savedIndex, 10);
+              setCurrentIndex(index);
+
+              // Espera o componente carregar antes de mover o swiper
+              setTimeout(() => {
+                if (swiperRef.current) {
+                  swiperRef.current.scrollToIndex({ index, animated: false });
+                }
+              }, 100);
+            }
+          } catch (error) {
+            console.error('Erro ao carregar do AsyncStorage', error);
+          }
+        };
+
+        loadData();
+
+      loadBloq();
+    }, []);
 
   return (
     <View style={{ flex: 1 }}>
@@ -75,7 +136,7 @@ export default function Inicio() {
         <SwiperFlatList
           ref={swiperRef}
           data={data}
-          onChangeIndex={({ index }) => setCurrentIndex(index)}
+          onChangeIndex={({ index }) => {setCurrentIndex(index);AsyncStorage.setItem('swiperIndex', index.toString());}}
           renderItem={({ item }) => (
             <View
               style={{
@@ -112,7 +173,7 @@ export default function Inicio() {
             alignItems: 'center',
           }}
         >
-          {data.map((_, index) => (
+          {data.map((item, index) => (
             <Pressable key={index} onPress={() => goToIndex(index)}>
               <View
                 style={{
@@ -127,12 +188,12 @@ export default function Inicio() {
               >
                 {index === currentIndex && (
                   <Image
-                    source={require('../../../assets/img/inicio/coracao.png')} 
+                    source={require('../../../assets/img/inicio/coracao.png')}
                     style={{
                       width: 30,
                       height: 30,
                       resizeMode: 'contain',
-                      tintColor:'#e7b76b',
+                      tintColor: item.color,  // AGORA item existe
                     }}
                   />
                 )}

@@ -13,7 +13,7 @@ export default StyleSheet.create({
         width:80,
         height:80,
         right:'40%',
-        top:'3%',
+        
         zIndex:100,
     },
     seta:{
@@ -22,15 +22,40 @@ export default StyleSheet.create({
     },
     containerScroll:{
         width:'95%',
-        height:'60%',
+        height:'80%',
         borderColor:'#572205',
+        backgroundColor:'rgba(137, 93, 48, 0.5)',
         borderWidth:2,
     },
     text:{
-        fontSize:25,
+        top:'10%',
+        fontSize:40,
         margin:20,
         color: '#fff1dc',
         fontFamily:'nunito',
         textAlign:'center',
     },
+    board: {
+        padding: 10,
+        justifyContent: 'center',
+        alignItems: 'center',
+        gap: 5,
+  },
+    row: {
+        flexDirection: 'row',
+  },
+    cell: {
+        top:'100%',
+        width: 100,
+        height: 100,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderColor: '#fff',
+        borderWidth: 2,
+  },
+    cellText: {
+        fontSize: 50,
+        color: '#fff1dc',
+        fontFamily: 'nunito',
+  },
 })
