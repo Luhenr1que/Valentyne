@@ -66,6 +66,25 @@ export const AudioProvider = ({ children }) => {
     }
   };
 
+  const playSomFlip = async () => {
+    try {
+      const { sound: som } = await Audio.Sound.createAsync(
+        require('./assets/music/page.mp3')
+      );
+
+      await som.setVolumeAsync(0.7);
+      await som.playAsync();
+
+      som.setOnPlaybackStatusUpdate((status) => {
+        if (status.didJustFinish) {
+          som.unloadAsync();
+        }
+      });
+    } catch (e) {
+      console.error('Erro no som do botão:', e);
+    }
+  };
+
   const playSomBotCode = async () => {
     try {
       const { sound: som } = await Audio.Sound.createAsync(
@@ -108,6 +127,7 @@ export const AudioProvider = ({ children }) => {
       value={{
         playSound,
         playSomBot,
+        playSomFlip,
         playSomBotCode,
         pauseBackgroundMusic,
         resumeBackgroundMusic,

@@ -34,7 +34,7 @@ export default function App() {
   return (
     <AudioProvider>
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Inicio">
+      <Stack.Navigator initialRouteName="Splach">
         <Stack.Screen
           name='Splach'
           component={Splach}

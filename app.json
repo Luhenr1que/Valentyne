@@ -21,7 +21,13 @@
         "backgroundColor": "#e7b76b"
       },
       "edgeToEdgeEnabled": true,
-      "package": "com.luhenriq.Suprise"
+      "package": "com.luhenriq.Suprise",
+      "permissions": [
+        "android.permission.RECORD_AUDIO",
+        "android.permission.MODIFY_AUDIO_SETTINGS",
+        "android.permission.RECORD_AUDIO",
+        "android.permission.MODIFY_AUDIO_SETTINGS"
+      ]
     },
     "web": {
       "favicon": "./assets/img/icon.png"
@@ -35,6 +41,12 @@
       "expo-audio",
       "expo-video",
       "expo-font"
-    ]
+    ],
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/60756103-f5dc-43a7-a69e-ed467ee73095"
+    }
   }
 }

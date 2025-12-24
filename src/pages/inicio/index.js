@@ -19,7 +19,7 @@ export default function Inicio() {
   const [modalVisibleUsado, setModalVisibleUsado] = useState(false);
   const [modalVisibleNovo, setModalVisibleNovo] = useState(false);
 
-  const { playSomBot } = useAudio()
+  const { playSomBot, playSomFlip } = useAudio()
   const [ticketAvailable, setTicketAvailable] = useState(false);
   const [selectedTicket, setSelectedTicket] = useState(null);
   const [timeLeft, setTimeLeft] = useState({ hours: 0, minutes: 0, seconds: 0 });
@@ -29,24 +29,32 @@ export default function Inicio() {
   // Configuração dos tipos com suas porcentagens e cores
   const ticketConfig = {
     tipos: [
-      { nome: '🥰 ROMÂNTICO 🥰', chance: 0, color: '#ff69b4' },   
-      { nome: '😈 SAFADO 😈', chance: 0, color: '#992dcbff' },       
-      { nome: '🎁 MIMO 🎁', chance: 0, color: '#4c8edaff' },     
-      { nome: '💛 JACKPOT 💛', chance: 100, color: '#eec600ff' }       
+      { nome: '🥰 ROMÂNTICO 🥰', chance: 56, color: '#ff69b4' },   
+      { nome: '😈 SAFADO 😈', chance: 40, color: '#992dcbff' },       
+      { nome: '🎁 MIMO 🎁', chance: 3, color: '#4c8edaff' },     
+      { nome: '💛 JACKPOT 💛', chance: 1, color: '#eec600ff' }       
     ],
     mensagens: {
       '🥰 ROMÂNTICO 🥰': [
         'Vale um montão de beijinhos! 😘',
         'Vale um abraço bem apertado! 🤗',
-        'Vale um jantar romântico! 🍷',
-        'Vale um passeio a dois! 🌹',
         'Vale uma declaração de amor! ❤️',
         'Vale um texto fofo! 💌',
         'Vale um texto Sapeca! 😇',
         'Vale um Eu Te Amo Especial! 💖',
         'Vale mudar a cor dos corações por uma semana! 🖤',
         'Vale uma sessão de fotos! 📸',
-        'Vale um mimo surpresa! 🎁'
+        'Vale um mimo surpresa! 🎁',
+        'Vale uma banana! 🍌',
+        'Vale um filminho juntinhos! 🎬',
+        'Vale um miojo! 🍜',
+        'Vale uma noite jogando videogame! 🎮',
+        'Vale pintar as minhas unhas! 💅',
+        'Vale cozinhar juntinhos! 🍳',
+        'Vale zerar uma série juntos! 📺',
+        'Vale apelido novo! 🥰',
+        'Vale uma carta de amor! 💕',
+        'Vale jogar stardew valley comigo! 🌾',
       ],
       '😈 SAFADO 😈': [
         'Vale uma noite sob a luz Vermelha! 🔥',
@@ -56,7 +64,14 @@ export default function Inicio() {
         'Vale uma transa sob a luz da lua! 🌙',
         'Vale uma transa no chuveiro! 🚿',
         'Vale uma transa amarradinha! ⛓️',
-        'Vale uma transa no sofá! 🛋️'
+        'Vale uma transa no sofá! 🛋️',
+        'Vale um chupão! 😋',
+        'Vale um nude! 📸',
+        'Vale uma transa com muitos tapas! 👋',
+        'Vale beber e transar! 🍻',
+        'Vale sexo oral gostoso! 👅',
+        'Vale um jogo safado! 🎲',
+        'Vale uma transa enquanto joga! 🎮',
       ],
       '🎁 MIMO 🎁': [
         'Vale um Chocolate! 🍫',
@@ -64,11 +79,19 @@ export default function Inicio() {
         'Vale uma batata! 🍟',
         'Vale um drink especial! 🍹',
         'Vale um vinho! 🍷',
+        'Vale um novo brinquedo! 😏',
+        'Vale um lanche especial! 🍔',
+        'Vale flores! 🌹',
+        'Vale roupa de gótica! 🖤',
+        'Vale um novo livro! 📚',
       ],
       '💛 JACKPOT 💛': [
         'Vale uma atualização do App! 🚀',
         'Vale um presente surpresa! 🎉',
         'Vale uma massagem VIP! 😏',
+        'Vale uma camiseta personalizada nossa! 👕',
+        'Vale uma xícara personalizada nossa! ☕',
+        'Vale ir no cinema! 🍿',
       ]
     }
   };
@@ -226,7 +249,7 @@ export default function Inicio() {
 
   // Função para girar o ticket
   const flipTicket = () => {
-    playSomBot();
+    playSomFlip();
     
     if (!showTicketContent) {
       // Primeiro clique - girar para mostrar conteúdo
@@ -261,7 +284,7 @@ export default function Inicio() {
       let isAvailable = false;
       
       // Verifica se é um novo dia
-      if (lastDate == today) {
+      if (lastDate !== today) {
         // Novo dia - reseta
         await AsyncStorage.setItem('ticketDate', today);
         await AsyncStorage.setItem('ticketUsed', 'false');
@@ -759,7 +782,7 @@ export default function Inicio() {
               elevation: 20,
             }}>
               <Text style={[styles.codeT, { textAlign: 'center', marginBottom: 20 }]}>
-                O de hoje já foi sapeca 🙃
+                O de hoje já foi Sapeca 🙃
               </Text>
 
               <Text style={{
