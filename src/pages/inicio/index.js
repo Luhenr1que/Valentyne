@@ -1,5 +1,5 @@
 import { useNavigation } from "@react-navigation/native";
-import { Image, ImageBackground, Pressable, View, Dimensions, Modal,Text,TextInput,KeyboardAvoidingView, Platform } from "react-native";
+import { Image, ImageBackground, Pressable, View, Dimensions, ScrollView, Modal,Text,TextInput,KeyboardAvoidingView, Platform } from "react-native";
 import { useRef,useState, useEffect, useContext } from "react";
 import SwiperFlatList from "react-native-swiper-flatlist";
 import { useAudio } from "../../../audioContext";
@@ -21,28 +21,39 @@ export default function Inicio() {
 
   const basedata = [
     {
+      id: 6,
+      img: require('../../../assets/img/inicio/natal.png'),
+      local: 'Natal',
+      color: '#ffffffff',
+      image: require('../../../assets/img/inicio/snow.png')
+    },
+    {
       id: 1,
       img: require('../../../assets/img/inicio/musicB.png'),
       local: 'Music',
       color:'#e7b76b',
+      image: require('../../../assets/img/inicio/coracao.png')
     },
     {
       id: 2,
       img: require('../../../assets/img/inicio/drawB.png'),
       local: 'Draws',
       color:'#e7b76b',
+      image: require('../../../assets/img/inicio/coracao.png')
     },
     {
       id: 3,
       img: require('../../../assets/img/inicio/rolesB.png'),
       local: 'Memories',
       color:'#e7b76b',
+      image: require('../../../assets/img/inicio/coracao.png')
     },
     {
       id: 4,
       img: bloq=='268' ? require('../../../assets/img/inicio/usB.png') : require('../../../assets/img/inicio/bloquedB.png'),
       local: bloq=='268' ? 'Final' : 'Modal',
       color: bloq=='268' ?'#fa4141':'#e7b76b',
+      image: require('../../../assets/img/inicio/coracao.png')
     },
   ];
   const data = bloq ==='268' ? [
@@ -51,6 +62,7 @@ export default function Inicio() {
       img: require('../../../assets/img/inicio/gameB.png'),
       local: 'Game',
       color:'#77c0fa',
+      image: require('../../../assets/img/inicio/coracao.png')
     },
   ] : basedata
 
@@ -110,7 +122,6 @@ export default function Inicio() {
               const index = parseInt(savedIndex, 10);
               setCurrentIndex(index);
 
-              // Espera o componente carregar antes de mover o swiper
               setTimeout(() => {
                 if (swiperRef.current) {
                   swiperRef.current.scrollToIndex({ index, animated: false });
@@ -173,6 +184,7 @@ export default function Inicio() {
             alignItems: 'center',
           }}
         >
+          <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ alignItems: 'center', paddingHorizontal: 10 }}>
           {data.map((item, index) => (
             <Pressable key={index} onPress={() => goToIndex(index)}>
               <View
@@ -188,24 +200,25 @@ export default function Inicio() {
               >
                 {index === currentIndex && (
                   <Image
-                    source={require('../../../assets/img/inicio/coracao.png')}
+                    source={item.image}
                     style={{
                       width: 30,
                       height: 30,
                       resizeMode: 'contain',
-                      tintColor: item.color,  // AGORA item existe
+                      tintColor: item.color,  
                     }}
                   />
                 )}
               </View>
             </Pressable>
           ))}
+        </ScrollView>
         </View>
         <Modal animationType='fade' visible={m} transparent={true} >
           <View style={{ width: '100%', height: '100%', backgroundColor: 'rgba(94, 93, 93, 0.8)', justifyContent: 'center', alignItems: 'center' }}>
             <View style={{ width: '80%', height:300, paddingVertical: 20, backgroundColor: '#bc7126', alignItems: 'center', justifyContent: 'center', gap: 20, borderWidth: 5, borderRadius: 30, borderColor: '#713205', paddingHorizontal: 20 }}>
               <Text style={styles.codeT}>Qual é a senha?</Text>
-              <TextInput style={styles.codeI} onChangeText={text => setBloq(text)} maxLength={3}></TextInput>
+              <TextInput style={styles.codeI} keyboardType="number-pad" onChangeText={text => setBloq(text)} maxLength={3}></TextInput>
               <Pressable onPress={()=>check()} style={styles.setaA}><Image style={styles.seta} source={require('../../../assets/img/seta.png')}></Image></Pressable>
             </View>
           </View>

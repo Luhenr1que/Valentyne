@@ -1,6 +1,6 @@
 import { useNavigation } from "@react-navigation/native";
 import styles from "./style";
-import { ImageBackground, Pressable, Text, Image, ScrollView, View } from "react-native";
+import { ImageBackground, Pressable, Text, Image, ScrollView, View, Dimensions } from "react-native";
 import { useAudio } from "../../../audioContext";
 import { useEffect, useState } from "react";
 
@@ -8,6 +8,7 @@ export default function Memories(){
     const navigation = useNavigation();
     const {playSound, playSomBot,playSomBotCode} = useAudio()
     const [code,setCode] = useState('');
+    const { width, height } = Dimensions.get('window');
 
     const back = () =>{
         playSomBot()
@@ -83,6 +84,22 @@ export default function Memories(){
                         </Pressable>
                     </View>
                     <Image resizeMode="cover" style={styles.img} source={require('../../../assets/img/roles/10.jpg')}></Image>
+                </View>
+                <View style={styles.linha}>
+                    <Text style={styles.text}>O tempo passa, mas a Liberdade sempre será o nosso lugar favorito.</Text>
+                    <Image resizeMode="cover" style={styles.img} source={require('../../../assets/img/roles/14.jpeg')}></Image>
+                </View>
+                <View style={styles.linha2}>
+                    <Text style={styles.text}>Cleiton kkkkkkkkkkkkkk</Text>
+                    <Image resizeMode="cover" style={styles.img} source={require('../../../assets/img/roles/15.jpeg')}></Image>
+                </View>
+                <View style={styles.linha2}>
+                    <Text style={styles.text}>Eu  amo tirar fotos com você, eu nunca gostei de tirar fotos, mas criar memorias com você é o que eu mais amo.</Text>
+                    <Image resizeMode="cover" style={styles.img} source={require('../../../assets/img/roles/16.jpeg')}></Image>
+                </View>
+                <View style={styles.linha3}>
+                    <Image resizeMode="cover" style={[styles.img,{width:width*0.9, height:width*0.5}]} source={require('../../../assets/img/roles/17.jpeg')}></Image>
+                    <Text style={styles.text2}>Preencher essas prateleiras com as nossas coisas, nossas memórias, nossos sentimentos, nossas vidas é  uma sensação tão boa que eu jamais conseguiria dizer em palavras.</Text>
                 </View>
             </ScrollView>
         </ImageBackground>

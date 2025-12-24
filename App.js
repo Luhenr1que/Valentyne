@@ -11,6 +11,7 @@ import Memories from './src/pages/memories';
 import Music from './src/pages/musicPage';
 import Splach from './src/pages/splach';
 import Game from './src/pages/game/index.js';
+import Natal from './src/pages/feriados/natal.js';
 
 import { NavigationContainer } from '@react-navigation/native';
 
@@ -33,7 +34,7 @@ export default function App() {
   return (
     <AudioProvider>
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator initialRouteName="Inicio">
         <Stack.Screen
           name='Splach'
           component={Splach}
@@ -79,6 +80,13 @@ export default function App() {
         <Stack.Screen
           name='Game'
           component={Game}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name='Natal'
+          component={Natal}
           options={{
             headerShown: false,
           }}
