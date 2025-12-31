@@ -23,7 +23,7 @@ export default function Final(){
             setBot('Sim'); // muda o botão visualmente para "Sim"
         } else {
             setM(true);
-            setMsg('Você é só minha, pra sempre, nunca se esqueça disso.\n😑🪓❤❤❤');
+            setMsg('Você é só minha, pra sempre, nunca se esqueça disso.\n😑🪓🪓🪓❤❤❤');
             setTimeout(()=>{
                 setM(false)
                 navigation.navigate('Inicio')
